@@ -1,0 +1,26 @@
+{
+  "name": "js-numeral",
+  "version": "1.0.0",
+  "description": "js-numeral",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "dev": "npm run test:watch & npm start",
+    "test": "mocha  --colors ./*.spec.js",
+    "test:watch": "npm test -w"
+  },
+  "author": {
+    "name": "Ferenc Sticza",
+    "email": "ferenc.sticza@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fsticza/assessment.git"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^3.5.0",
+    "eslint": "3.19.0",
+    "mocha": "^2.4.5"
+  }
+}
