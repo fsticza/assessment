@@ -1,12 +1,21 @@
 'use strict'
 
-import numeral from '../index.js'
+import {toWords} from '../index.js'
 
-const form = document.querySelector('form[data-js="form"]')
+const formEl = document.querySelector('form[data-js="form"]')
+const resultEl = formEl.result
 const onSubmit = function (ev) {
   ev.preventDefault()
-  console.log(numeral.toWords(ev.target.value))
+  resultEl.value = 'pending...'
+  return toWords(parseInt(ev.target.value, 10))
+    .then(result => {
+      resultEl.value = result
+      return result
+    })
+    .catch(err => {
+      resultEl.value = err.message
+    })
 }
 
-form.addEventListener('submit', onSubmit, false)
-form.addEventListener('input', onSubmit, false)
+formEl.addEventListener('submit', onSubmit, false)
+formEl.addEventListener('input', onSubmit, false)

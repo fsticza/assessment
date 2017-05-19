@@ -4,9 +4,8 @@
   "description": "js-numeral",
   "main": "index.js",
   "scripts": {
-    "start": "node index",
-    "dev": "webpack --watch & webpack-dev-server & npm run test:watch",
-    "build": "webpack -p",
+    "start": "webpack-dev-server",
+    "dev": "webpack --watch & webpack-dev-server",
     "test": "mocha  --colors ./*.spec.js",
     "test:watch": "npm test -w"
   },
